@@ -15,17 +15,18 @@ def fight(enemy_hp, enemy_power):
         my_hp = my_hp - enemy_power
         enemy_hp = enemy_hp - my_power
 
-        if my_hp <= 0:
+        if my_hp < 0:
             print(f"我的剩余血量为{my_hp},敌人的剩余血量为{enemy_hp},我输了")
             break
-        # elif my_hp == 0 & enemy_hp == 0:
-        #     print(f"我的血量为{my_hp},敌人的血量为{enemy_hp},平局")
-        #     break
-        elif enemy_hp <= 0:
+        elif my_hp == 0 & enemy_hp == 0:
+            print(f"我的剩余血量为{my_hp},敌人的剩余血量为{enemy_hp},平局")
+            break
+        elif enemy_hp < 0:
             print(f"我的剩余血量为{my_hp},敌人的剩余血量为{enemy_hp},我赢了")
             break
 
 if __name__ =="__main__":
+
     #列表推导式生成敌人的血量
     hp = [x for x in range(990, 1010)]
     enemy_hp = random.choice(hp)
